@@ -4,16 +4,16 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.testapplication.repo.ProductRepository
 import kotlinx.coroutines.launch
-import kotlin.coroutines.coroutineContext
 
 class SplashFragmentViewModel(
-    private val moviesRepo: ProductRepository
+    private val productRepository: ProductRepository
 ) : ViewModel() {
 
+    var failureLiveData = productRepository.failureLiveData
 
     fun initialize() {
         viewModelScope.launch {
-            moviesRepo.getAllProduct()
+            productRepository.getAllProduct()
         }
     }
 }

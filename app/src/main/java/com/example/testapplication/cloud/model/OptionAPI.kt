@@ -7,12 +7,12 @@ import com.google.gson.annotations.SerializedName
 class OptionAPI {
     @SerializedName("id")
     @Expose
-    var id: Int? = null
+    var id: Long? = null
         private set
 
     @SerializedName("product_id")
     @Expose
-    var productId: Int? = null
+    var productId: Long? = null
         private set
 
     @SerializedName("name")

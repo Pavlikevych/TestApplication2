@@ -4,10 +4,10 @@ import androidx.room.ColumnInfo
 
 data class Variant(
     @ColumnInfo(name = "id")
-    val id: Int = 0,
+    val id: Long = 0,
 
     @ColumnInfo(name = "product_id")
-    val productId: Int = 0,
+    val productId: Long = 0,
 
     @ColumnInfo(name = "title")
     val title: String = "",
@@ -67,7 +67,7 @@ data class Variant(
     val weightUnit: String = "",
 
     @ColumnInfo(name = "inventory_item_id")
-    val inventoryItemId: Int = 0,
+    val inventoryItemId: Long = 0,
 
     @ColumnInfo(name = "inventory_quantity")
     val inventoryQuantity: Int = 0,

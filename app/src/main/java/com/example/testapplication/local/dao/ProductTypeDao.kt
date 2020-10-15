@@ -8,6 +8,6 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 abstract class ProductTypeDao: BaseDao<ProductType>(ProductType::class.java) {
 
-    @Query("SELECT * FROM all_product_type ")
+    @Query("SELECT * FROM type ")
     abstract fun observeProductType(): Flow<List<ProductType>>
 }

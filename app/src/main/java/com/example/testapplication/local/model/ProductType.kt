@@ -4,13 +4,14 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "all_product_type")
+@Entity(tableName = "type")
 data class ProductType(
+
     @PrimaryKey
     @ColumnInfo(name = "id")
     val id: Int = 0,
 
-    @ColumnInfo(name = "product_type_name")
+    @ColumnInfo(name = "product_type")
     val productType: String = ""
 ) {
     companion object {

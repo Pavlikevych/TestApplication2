@@ -76,7 +76,7 @@ class DatabaseConverters {
 
 	@TypeConverter
 	fun toImagesList(value: String): Images {
-		val type = object : TypeToken<List<Images>>() {}.type
+		val type = object : TypeToken<Images>() {}.type
 		return Gson().fromJson(value, type)
 	}
 }

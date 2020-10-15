@@ -4,10 +4,10 @@ import androidx.room.ColumnInfo
 
 data class Image (
     @ColumnInfo(name = "id")
-    val id: Int = 0,
+    val id: Long = 0,
 
     @ColumnInfo(name = "product_id")
-    val productId: Int = 0,
+    val productId: Long = 0,
 
     @ColumnInfo(name = "position")
     val position: Int = 0,

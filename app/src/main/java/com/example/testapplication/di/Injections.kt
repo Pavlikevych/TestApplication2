@@ -5,7 +5,9 @@ import androidx.room.Room
 import com.example.testapplication.cloud.CloudApi
 import com.example.testapplication.local.AppDatabase
 import com.example.testapplication.repo.ProductRepository
+import com.example.testapplication.ui.products.ProductsFragmentViewModel
 import com.example.testapplication.ui.splash.SplashFragmentViewModel
+import com.example.testapplication.ui.tag_list.TagsListFragmentViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.core.context.startKoin
@@ -15,6 +17,8 @@ fun initInjections(application: Application) {
 
 	val viewModels = module {
 		viewModel { SplashFragmentViewModel(get()) }
+		viewModel { TagsListFragmentViewModel(get()) }
+		viewModel { ProductsFragmentViewModel(get()) }
 	}
 
 	val services = module {

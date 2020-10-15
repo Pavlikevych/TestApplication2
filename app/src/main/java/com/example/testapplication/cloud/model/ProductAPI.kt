@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 class ProductAPI {
     @SerializedName("id")
     @Expose
-    var id: Int? = null
+    var id: Long? = null
         private set
 
     @SerializedName("title")

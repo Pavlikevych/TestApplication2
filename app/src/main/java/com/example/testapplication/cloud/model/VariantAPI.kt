@@ -6,12 +6,12 @@ import com.google.gson.annotations.SerializedName
 class VariantAPI {
     @SerializedName("id")
     @Expose
-    var id: Int? = null
+    var id: Long? = null
         private set
 
     @SerializedName("product_id")
     @Expose
-    var productId: Int? = null
+    var productId: Long? = null
         private set
 
     @SerializedName("title")
@@ -111,7 +111,7 @@ class VariantAPI {
 
     @SerializedName("inventory_item_id")
     @Expose
-    var inventoryItemId: Int? = null
+    var inventoryItemId: Long? = null
         private set
 
     @SerializedName("inventory_quantity")

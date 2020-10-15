@@ -11,8 +11,8 @@ abstract class ProductDao : BaseDao<Product>(Product::class.java) {
     @Query("SELECT * FROM all_product")
     abstract fun observe(): Flow<List<Product>>
 
-    @Query("SELECT id FROM all_product WHERE product_type LIKE :productType")
-    abstract suspend fun observeByProductType(productType: String): Flow<List<Product>>
+    @Query("SELECT * FROM all_product WHERE product_type LIKE :search ")
+    abstract fun observeByProductType(search: String?): Flow<List<Product>>
 
     @Query("DELETE FROM all_product")
     abstract suspend fun deleteAll()
