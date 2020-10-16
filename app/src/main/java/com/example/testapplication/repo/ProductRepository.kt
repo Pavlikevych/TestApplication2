@@ -1,17 +1,17 @@
 package com.example.testapplication.repo
 
-import androidx.lifecycle.MutableLiveData
 import com.example.testapplication.cloud.CloudApi
 import com.example.testapplication.cloud.model.ProductsResponse
 import com.example.testapplication.local.AppDatabase
 import com.example.testapplication.local.model.*
+import com.example.testapplication.utils.SingleLiveEvent
 import com.example.testapplication.utils.extensions.loge
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.emptyFlow
 
 class ProductRepository(private val database: AppDatabase, private val cloud: CloudApi) {
 
-    val failureLiveData = MutableLiveData<Boolean>()
+    val failureLiveData = SingleLiveEvent<Boolean>()
 
     suspend fun getAllProduct() {
         val productResponse = getAllProductSafety(1).productAPIS ?: emptyList()
@@ -24,7 +24,6 @@ class ProductRepository(private val database: AppDatabase, private val cloud: Cl
 
         val products = productResponse.map {
             val variants = it.variantAPIS
-                ?.filter { variantAPI -> variantAPI.requiresShipping == true }
                 ?.map { variant ->
                     Variant(
                         id = variant.id ?: 0,
